@@ -11,23 +11,21 @@ import com.t3.finalproject.service.EmployeeService;
 
 @SpringBootTest
 class FinalProjectApplicationTests {
-	
-	@Autowired
-	EmployeeService service;
+
+  @Autowired EmployeeService service;
 
   @Test
   void getTest() {
-	  Employee e = service.getId(0);
-	  
-	  assertEquals(e.getFirstName(), "andy");
+    Employee e = service.getId(0);
+
+    assertEquals(e.getFirstName(), "andy");
   }
-  
+
   @Test
   void deleteTest() {
-	  Employee e = service.getId(15);
-	  service.delete(e);
-	  
-	  assertEquals(e, null);
+    Employee e = service.getId(15);
+    service.delete(e);
+
+    assertEquals(e, null);
   }
-  
 }
