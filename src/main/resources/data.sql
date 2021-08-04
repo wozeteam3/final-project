@@ -39,5 +39,4 @@ VALUES
     (9,'Carl','Pierre','aidcostello@gmail.com','1919414202',0,4,1),
     (14,'Angela','Caldwel','aidcostello@gmail.com','1919414202',4,0,0),
     (10,'Diana','Smith','aidcostello@gmail.com','1919414202',1,1,0);
-
     
