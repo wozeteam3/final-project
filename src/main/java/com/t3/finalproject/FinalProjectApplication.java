@@ -20,7 +20,7 @@ public class FinalProjectApplication {
     public void createSalaryPayGrade(int st0, int st1, int st2, int st3, int st4) {
     	try(
     			Connection c = db.getConnection();
-    			PreparedStatement ps = c.prepareStatement(createSPG)
+    			PreparedStatement ps = c.prepareStatement(createSPG);
     		){
     		ps.setString(1, st0);
     		ps.setString(2, st1);
@@ -58,7 +58,19 @@ public class FinalProjectApplication {
     	}
     }
     
-    
+    public void incrementSalaryPayStep(Employee emp) {
+    	try(
+    		Connection c = db.getConnection();
+    		PreparedStatement ps = c.prepareStatement(increaseSPS);
+    		){
+    		ps.setString(1, emp.pay_step++);
+    		ps.setString(2, emp.emp_id);
+    	}
+    	catch(SQLException e) {
+    		e.printStackTrace();
+    	}
+    	
+    }
     
     
     
