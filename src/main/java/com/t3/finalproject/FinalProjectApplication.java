@@ -1,5 +1,6 @@
 package com.t3.finalproject;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -14,11 +15,11 @@ public class FinalProjectApplication {
     
     final String createSPG = "INSERT INTO paygrade_salary (step0, step1, step2, step3, step4) VALUES(?, ?, ?, ?, ?)";
     final String increaseSPS = "UPDATE employee SET pay_step = ? WHERE emp_id = ?";
-    final String increaseSPG = "UPDATE employee SET pay_grade = ? WHERE emp_id = ?";
+    final String increaseSPG = "UPDATE employee SET pay_grade = ?, pay_step = ? WHERE emp_id = ?";
     
     public void createSalaryPayGrade(int st0, int st1, int st2, int st3, int st4) {
     	try(
-    			Connection c = db.getconnection();
+    			Connection c = db.getConnection();
     			PreparedStatement ps = c.prepareStatement(createSPG)
     		){
     		ps.setString(1, st0);
@@ -33,5 +34,35 @@ public class FinalProjectApplication {
     		e.printStackTrace();
     	}
     }
+    
+    public void checkSPS(Employee emp) {
+    	if(emp.pay_step == 4) {
+    		incrementSalaryPayGrade();
+    	}
+    	else {
+    		incrementSalaryPayStep();
+    	}
+    }
+    
+    public void incrementSalaryPayGrade(Employee emp) {
+    	try(
+    			Connection c = db.getConnection();
+    			PreparedStatement ps = c.prepareStatement(increaseSPG);
+    		){
+    		ps.setString(1, emp.pay_grade++);
+    		ps.setString(2, 0);
+    		ps.setString(3, emp.emp_id);
+    	}
+    	catch(SQLException e) {
+    		e.printStackTrace();
+    	}
+    }
+    
+    
+    
+    
+    
+    
+    
   }
 }
