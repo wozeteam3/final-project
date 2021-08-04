@@ -10,9 +10,8 @@ import com.t3.finalproject.model.Employee;
 
 @SpringBootTest
 class FinalProjectApplicationTests {
-	
-	@Autowired
-	EmployeeService service;
+
+  @Autowired EmployeeService service;
 
   @Test
   void getTest() {
@@ -20,7 +19,7 @@ class FinalProjectApplicationTests {
 	  
 	  assertEquals("andy", e.getFirstName());
   }
-  
+
   @Test
   void deleteTest() {
 	  Employee e = service.getId(15);
@@ -29,5 +28,4 @@ class FinalProjectApplicationTests {
 	  e = service.getId(15);
 	  assertEquals(null, e);
   }
-  
 }
