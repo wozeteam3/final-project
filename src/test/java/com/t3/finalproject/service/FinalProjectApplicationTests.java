@@ -15,17 +15,17 @@ class FinalProjectApplicationTests {
 
   @Test
   void getTest() {
-	  Employee e = service.getId(15);
-	  
-	  assertEquals("andy", e.getFirstName());
+    Employee e = service.getId(15);
+
+    assertEquals("andy", e.getFirstName());
   }
 
   @Test
   void deleteTest() {
-	  Employee e = service.getId(15);
-	  service.delete(e);
-	  
-	  e = service.getId(15);
-	  assertEquals(null, e);
+    Employee e = service.getId(15);
+    service.delete(e);
+
+    e = service.getId(15);
+    assertEquals(null, e);
   }
 }
