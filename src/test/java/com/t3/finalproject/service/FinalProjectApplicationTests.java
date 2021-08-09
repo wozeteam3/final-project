@@ -13,7 +13,7 @@ import com.t3.finalproject.model.Employee;
 @SpringBootTest
 class FinalProjectApplicationTests {
 
-	@Autowired
+@Autowired
 	EmployeeService service;
 
 	@Test

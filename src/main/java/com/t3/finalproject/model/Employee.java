@@ -134,6 +134,4 @@ public class Employee {
 				+ ", lastName=" + this.lastName + ", email=" + this.email + ", phoneNum=" + this.phoneNum
 				+ ", payGrade=" + this.payGrade + ", payStep=" + this.payStep + ", isSalaried=" + this.isSalaried + "]";
 	}
-	
-	
 }
