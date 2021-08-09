@@ -127,4 +127,13 @@ public class Employee {
 	public void setSalaried(boolean isSalaried) {
 		this.isSalaried = isSalaried;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [empId=" + this.empId + ", benefitId=" + this.benefitId + ", firstName=" + this.firstName
+				+ ", lastName=" + this.lastName + ", email=" + this.email + ", phoneNum=" + this.phoneNum
+				+ ", payGrade=" + this.payGrade + ", payStep=" + this.payStep + ", isSalaried=" + this.isSalaried + "]";
+	}
+	
+	
 }

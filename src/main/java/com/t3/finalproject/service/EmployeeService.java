@@ -49,10 +49,7 @@ public class EmployeeService {
 			rs = ps.executeQuery();
 
 			if (rs.next() != false) {
-				result = new Employee();
-
-				result.setEmpId(rs.getInt(1));
-				result.setFirstName(rs.getString(3));
+				result = resultToEmp(rs);
 			} else {
 				System.out.println("ID not Found");
 			}
@@ -86,6 +83,9 @@ public class EmployeeService {
 	public void update(Employee emp) {
 		try (Connection c = datasource.getConnection()) {
 			PreparedStatement ps = c.prepareStatement(UPDATE);
+			
+			ps = empToPreparedStmt(emp, ps);
+			ps.setInt(9, emp.getEmpId());
 
 			ps.execute();
 		} catch (final SQLException e) {
@@ -118,14 +118,14 @@ public class EmployeeService {
 	}
 
 	public static PreparedStatement empToPreparedStmt(Employee e, PreparedStatement ps) throws SQLException {
-		ps.setInt(2, e.getBenefitId());
-		ps.setString(3, e.getFirstName());
-		ps.setString(4, e.getLastName());
-		ps.setString(5, e.getEmail());
-		ps.setString(6, e.getPhoneNum());
-		ps.setInt(7, e.getPayGrade());
-		ps.setInt(8, e.getPayStep());
-		ps.setBoolean(9, e.isSalaried());
+		ps.setInt(1, e.getBenefitId());
+		ps.setString(2, e.getFirstName());
+		ps.setString(3, e.getLastName());
+		ps.setString(4, e.getEmail());
+		ps.setString(5, e.getPhoneNum());
+		ps.setInt(6, e.getPayGrade());
+		ps.setInt(7, e.getPayStep());
+		ps.setBoolean(8, e.isSalaried());
 
 		return ps;
 	}
