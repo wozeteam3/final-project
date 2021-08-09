@@ -1,7 +1,7 @@
 package com.t3.finalproject.model;
 
 /**
- * @author Aidan
+ * @author 
  *
  */
 public class Employee {
