@@ -1,133 +1,137 @@
 package com.t3.finalproject.model;
 
-/** @author Aidan */
+/**
+ * @author 
+ *
+ */
 public class Employee {
-  private int empId;
-  private int benefitId;
-  private String firstName;
-  private String lastName;
-  private String email;
-  private String phoneNum;
-  private int payGrade;
-  private int payStep;
-  private boolean isSalaried;
+	private int empId;
+	private int benefitId;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String phoneNum;
+	private int payGrade;
+	private int payStep;
+	private boolean isSalaried;
+	
+	public Employee() {}
+	
+	/**
+	 * @param id
+	 * @param benId
+	 * @param f
+	 * @param l
+	 * @param email
+	 * @param phone
+	 * @param grade
+	 * @param step
+	 * @param salaried
+	 */
+	public Employee(int id, int benId, String f, String l, String email, 
+			String phone, int grade, int step, boolean salaried) {
+		this.empId = id;
+		this.benefitId = benId;
+		this.firstName = f;
+		this.lastName = l;
+		this.email = email;
+		this.phoneNum = phone;
+		this.payGrade = grade;
+		this.payStep = step;
+		this.isSalaried = salaried;
+	}
+	
+	/**
+	 * @param e
+	 */
+	public Employee(Employee e) {
+		this.empId = e.getEmpId();
+		this.benefitId = e.getBenefitId();
+		this.firstName = e.getFirstName();
+		this.lastName = e.getLastName();
+		this.email = e.getEmail();
+		this.phoneNum = e.getPhoneNum();
+		this.payGrade = e.getPayGrade();
+		this.payStep = e.getPayStep();
+		this.isSalaried = e.isSalaried();
+	}
+ 
+	public int getEmpId() {
+		return this.empId;
+	}
 
-  public Employee() {}
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
 
-  /**
-   * @param id
-   * @param benId
-   * @param f
-   * @param l
-   * @param email
-   * @param phone
-   * @param grade
-   * @param step
-   * @param salaried
-   */
-  public Employee(
-      int id,
-      int benId,
-      String f,
-      String l,
-      String email,
-      String phone,
-      int grade,
-      int step,
-      boolean salaried) {
-    this.empId = id;
-    this.benefitId = benId;
-    this.firstName = f;
-    this.lastName = l;
-    this.email = email;
-    this.phoneNum = phone;
-    this.payGrade = grade;
-    this.payStep = step;
-    this.isSalaried = salaried;
-  }
+	public int getBenefitId() {
+		return this.benefitId;
+	}
 
-  /** @param e */
-  public Employee(Employee e) {
-    this.empId = e.getEmpId();
-    this.benefitId = e.getBenefitId();
-    this.firstName = e.getFirstName();
-    this.lastName = e.getLastName();
-    this.email = e.getEmail();
-    this.phoneNum = e.getPhoneNum();
-    this.payGrade = e.getPayGrade();
-    this.payStep = e.getPayStep();
-    this.isSalaried = e.isSalaried();
-  }
+	public void setBenefitId(int benefitId) {
+		this.benefitId = benefitId;
+	}
 
-  public int getEmpId() {
-    return this.empId;
-  }
+	public String getFirstName() {
+		return this.firstName;
+	}
 
-  public void setEmpId(int empId) {
-    this.empId = empId;
-  }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-  public int getBenefitId() {
-    return this.benefitId;
-  }
+	public String getLastName() {
+		return this.lastName;
+	}
 
-  public void setBenefitId(int benefitId) {
-    this.benefitId = benefitId;
-  }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-  public String getFirstName() {
-    return this.firstName;
-  }
+	public String getEmail() {
+		return this.email;
+	}
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-  public String getLastName() {
-    return this.lastName;
-  }
+	public String getPhoneNum() {
+		return this.phoneNum;
+	}
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
+	}
 
-  public String getEmail() {
-    return this.email;
-  }
+	public int getPayGrade() {
+		return this.payGrade;
+	}
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+	public void setPayGrade(int payGrade) {
+		this.payGrade = payGrade;
+	}
 
-  public String getPhoneNum() {
-    return this.phoneNum;
-  }
+	public int getPayStep() {
+		return this.payStep;
+	}
 
-  public void setPhoneNum(String phoneNum) {
-    this.phoneNum = phoneNum;
-  }
+	public void setPayStep(int payStep) {
+		this.payStep = payStep;
+	}
 
-  public int getPayGrade() {
-    return this.payGrade;
-  }
+	public boolean isSalaried() {
+		return this.isSalaried;
+	}
 
-  public void setPayGrade(int payGrade) {
-    this.payGrade = payGrade;
-  }
+	public void setSalaried(boolean isSalaried) {
+		this.isSalaried = isSalaried;
+	}
 
-  public int getPayStep() {
-    return this.payStep;
-  }
-
-  public void setPayStep(int payStep) {
-    this.payStep = payStep;
-  }
-
-  public boolean isSalaried() {
-    return this.isSalaried;
-  }
-
-  public void setSalaried(boolean isSalaried) {
-    this.isSalaried = isSalaried;
-  }
+	@Override
+	public String toString() {
+		return "Employee [empId=" + this.empId + ", benefitId=" + this.benefitId + ", firstName=" + this.firstName
+				+ ", lastName=" + this.lastName + ", email=" + this.email + ", phoneNum=" + this.phoneNum
+				+ ", payGrade=" + this.payGrade + ", payStep=" + this.payStep + ", isSalaried=" + this.isSalaried + "]";
+	}
 }
