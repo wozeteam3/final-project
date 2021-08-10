@@ -13,9 +13,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 // TODO: Auto-generated Javadoc
-/**
- * The Class PayrollService.
- */
+/** The Class PayrollService. */
 @Configuration
 @Service
 public class PayrollService {
@@ -25,7 +23,7 @@ public class PayrollService {
 
   /** The get salary. */
   private final String GET_SALARY = "SELECT ? FROM paygrade_salary WHERE grade = ?";
-  
+
   /** The get hourly. */
   private final String GET_HOURLY = "SELECT ? FROM paygrade_hourly WHERE grade = ?";
 

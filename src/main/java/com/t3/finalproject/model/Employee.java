@@ -4,40 +4,38 @@ package com.t3.finalproject.model;
 /**
  * The Class Employee.
  *
- * @author 
+ * @author
  */
 public class Employee {
-  
+
   /** The emp id. */
   private int empId;
-  
+
   /** The benefit id. */
   private int benefitId;
-  
+
   /** The first name. */
   private String firstName;
-  
+
   /** The last name. */
   private String lastName;
-  
+
   /** The email. */
   private String email;
-  
+
   /** The phone num. */
   private String phoneNum;
-  
+
   /** The pay grade. */
   private int payGrade;
-  
+
   /** The pay step. */
   private int payStep;
-  
+
   /** The is salaried. */
   private boolean isSalaried;
 
-  /**
-   * Instantiates a new employee.
-   */
+  /** Instantiates a new employee. */
   public Employee() {}
 
   /**
