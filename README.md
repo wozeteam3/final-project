@@ -184,15 +184,15 @@ Project Link: [https://github.com/wozeteam3/final-project](https://github.com/wo
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/wozeteam3/final-project.svg?style=for-the-badge
+[contributors-url]: https://github.com/wozeteam3/final-project/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/wozeteam3/final-project.svg?style=for-the-badge
+[forks-url]: https://github.com/wozeteam3/final-project/network/members
+[stars-shield]: https://img.shields.io/github/stars/wozeteam3/final-project.svg?style=for-the-badge
+[stars-url]: https://github.com/wozeteam3/final-project/stargazers
+[issues-shield]: https://img.shields.io/github/issues/wozeteam3/final-project.svg?style=for-the-badge
 [issues-url]: https://github.com/wozeteam3/final-project/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/wozeteam3/final-project.svg?style=for-the-badge
+[license-url]: https://github.com/wozeteam3/final-project/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/github_username
