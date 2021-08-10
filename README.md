@@ -41,7 +41,7 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/wozeteam3/final-project"><strong>Explore the docs »</strong></a>
+    <a href="https://wozeteam3.github.io/final-project/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/wozeteam3/final-project">View Demo</a>
