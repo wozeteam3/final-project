@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run JavaDoc
-        run: javadoc -d final-project/docs *.java
+        run: javadoc -sourcepath ./src -d ./docs -subpackages .
