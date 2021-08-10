@@ -17,9 +17,7 @@ import org.springframework.stereotype.Service;
 import com.t3.finalproject.model.Employee;
 
 // TODO: Auto-generated Javadoc
-/**
- * The Class EmployeeService.
- */
+/** The Class EmployeeService. */
 @Configuration
 @Service
 public class EmployeeService {
@@ -32,19 +30,19 @@ public class EmployeeService {
 
   /** The get all. */
   private final String GET_ALL = "SELECT * FROM employee";
-  
+
   /** The get by id. */
   private final String GET_BY_ID = "SELECT * FROM employee WHERE emp_id = ?";
-  
+
   /** The delete by id. */
   private final String DELETE_BY_ID = "DELETE FROM employee WHERE emp_id = ?";
-  
+
   /** The create. */
   private final String CREATE =
       "INSERT INTO employee"
           + " (benefit_id,first_name,last_name,email,phone_num,pay_grade,pay_step,salaried) VALUES"
           + " (?,?,?,?,?,?,?,?)";
-  
+
   /** The update. */
   private final String UPDATE =
       "UPDATE employee SET benefit_id = ?, first_name = ?, last_name = ?, email = ?, phone_num = ?,"
