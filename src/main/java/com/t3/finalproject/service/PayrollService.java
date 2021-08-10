@@ -12,22 +12,44 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PayrollService.
+ */
 @Configuration
 @Service
 public class PayrollService {
 
+  /** The datasource. */
   protected DataSource datasource;
 
+  /** The get salary. */
   private final String GET_SALARY = "SELECT ? FROM paygrade_salary WHERE grade = ?";
+  
+  /** The get hourly. */
   private final String GET_HOURLY = "SELECT ? FROM paygrade_hourly WHERE grade = ?";
 
+  /** The jdbc template. */
   @Autowired private JdbcTemplate jdbcTemplate;
 
+  /**
+   * Instantiates a new payroll service.
+   *
+   * @param jdbcTemplate the jdbc template
+   */
   public PayrollService(final JdbcTemplate jdbcTemplate) {
     this.jdbcTemplate = jdbcTemplate;
     datasource = this.jdbcTemplate.getDataSource();
   }
 
+  /**
+   * Gets the pay.
+   *
+   * @param grade the grade
+   * @param step the step
+   * @param isSalaried the is salaried
+   * @return the pay
+   */
   public int getPay(int grade, int step, boolean isSalaried) {
     ResultSet rs;
 

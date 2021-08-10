@@ -16,30 +16,56 @@ import org.springframework.stereotype.Service;
 
 import com.t3.finalproject.model.Employee;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EmployeeService.
+ */
 @Configuration
 @Service
 public class EmployeeService {
 
+  /** The datasource. */
   protected DataSource datasource;
 
+  /** The jdbc template. */
   @Autowired private JdbcTemplate jdbcTemplate;
 
+  /** The get all. */
   private final String GET_ALL = "SELECT * FROM employee";
+  
+  /** The get by id. */
   private final String GET_BY_ID = "SELECT * FROM employee WHERE emp_id = ?";
+  
+  /** The delete by id. */
   private final String DELETE_BY_ID = "DELETE FROM employee WHERE emp_id = ?";
+  
+  /** The create. */
   private final String CREATE =
       "INSERT INTO employee"
           + " (benefit_id,first_name,last_name,email,phone_num,pay_grade,pay_step,salaried) VALUES"
           + " (?,?,?,?,?,?,?,?)";
+  
+  /** The update. */
   private final String UPDATE =
       "UPDATE employee SET benefit_id = ?, first_name = ?, last_name = ?, email = ?, phone_num = ?,"
           + " pay_grade = ?, pay_step = ?, salaried = ? WHERE emp_id = ?";
 
+  /**
+   * Instantiates a new employee service.
+   *
+   * @param jdbcTemplate the jdbc template
+   */
   public EmployeeService(final JdbcTemplate jdbcTemplate) {
     this.jdbcTemplate = jdbcTemplate;
     datasource = this.jdbcTemplate.getDataSource();
   }
 
+  /**
+   * Gets the id.
+   *
+   * @param id the id
+   * @return the id
+   */
   public Employee getId(int id) {
     ResultSet rs;
 
@@ -64,6 +90,11 @@ public class EmployeeService {
     return result;
   }
 
+  /**
+   * Gets the all.
+   *
+   * @return the all
+   */
   public List<Employee> getAll() {
     ResultSet rs;
 
@@ -84,6 +115,11 @@ public class EmployeeService {
     return result;
   }
 
+  /**
+   * Update.
+   *
+   * @param emp the emp
+   */
   public void update(Employee emp) {
     try (Connection c = datasource.getConnection()) {
       PreparedStatement ps = c.prepareStatement(UPDATE);
@@ -97,6 +133,11 @@ public class EmployeeService {
     }
   }
 
+  /**
+   * Delete.
+   *
+   * @param emp the emp
+   */
   public void delete(Employee emp) {
     try (Connection c = datasource.getConnection()) {
       PreparedStatement ps = c.prepareStatement(DELETE_BY_ID);
@@ -109,6 +150,11 @@ public class EmployeeService {
     }
   }
 
+  /**
+   * Creates the.
+   *
+   * @param emp the emp
+   */
   public void create(Employee emp) {
     try (Connection c = datasource.getConnection()) {
       PreparedStatement ps = c.prepareStatement(CREATE);
@@ -121,6 +167,14 @@ public class EmployeeService {
     }
   }
 
+  /**
+   * Emp to prepared stmt.
+   *
+   * @param e the e
+   * @param ps the ps
+   * @return the prepared statement
+   * @throws SQLException the SQL exception
+   */
   public static PreparedStatement empToPreparedStmt(Employee e, PreparedStatement ps)
       throws SQLException {
     ps.setInt(1, e.getBenefitId());
@@ -135,6 +189,13 @@ public class EmployeeService {
     return ps;
   }
 
+  /**
+   * Result to emp.
+   *
+   * @param rs the rs
+   * @return the employee
+   * @throws SQLException the SQL exception
+   */
   public static Employee resultToEmp(ResultSet rs) throws SQLException {
     Employee e =
         new Employee(
